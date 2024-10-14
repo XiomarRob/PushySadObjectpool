@@ -2,6 +2,8 @@ using System;
 
 class Program {
   public static void Main (string[] args) {
+           string[] salespersonNames = { "D", "E", "F" };
+    char[] allowedInitials = { 'D', 'E', 'F'};
     double totalD = 0, totalE =0, totalF = 0, saleAmount;
     char spInitial;
     string input;
@@ -14,7 +16,9 @@ class Program {
 
         if (spInitial == 'Z') break;
 
-        if (spInitial != 'D' && spInitial != 'E' && spInitial != 'F' )
+        int index = Array.IndexOf(allowedInitials, spInitial); 
+
+        if (index == -1)
         {
           Console.WriteLine("Error, invalid salesperson selected, please try again.");
           continue;
@@ -55,9 +59,7 @@ class Program {
         }
 
         Console.WriteLine("\nSales Summary:");
-        Console.WriteLine("Total sales by D: {0:C}", totalD);
-        Console.WriteLine("Total sales by E: {0:C}", totalE);
-        Console.WriteLine("Total sales by F: {0:C}", totalF);
+
         Console.WriteLine("Grand Total:{0:C}", ovrTotal);
         Console.WriteLine("Highest Sale: {0}", highestSalesperon);
 
