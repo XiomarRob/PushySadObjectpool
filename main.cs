@@ -9,7 +9,7 @@ class Program {
     string input;
 
     while (true)
-    {
+    { 
         Console.Write("Enter salesperson initial (D, E, or  F) or Z to quit: ");
         input = Console.ReadLine();
         spInitial = char.ToUpper(input[0]);
